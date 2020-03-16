@@ -1,0 +1,27 @@
+#container{
+	width: 150px;
+}
+.imageWrapper{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 150px;
+	display: block;
+	float: left;
+}
+.imageWrapper img{
+	width: auto;
+	height: 100px;
+}
+h1{
+	color: red;
+	font-family: Verdana;
+}
+
+h2{
+	color: grey;
+	font-family: Verdana;
+}
+
+img{
+	display: block;
+}

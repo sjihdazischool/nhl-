@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+    font-family: "Poiret One", sans-serif, Arial, serif;
+}
+
+h1{
+    /*color: #2196F3;*/
+    font-size: 3.56rem;
+    line-height: 110%;
+    margin: 1.78rem 0 1.424rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.container{
+	width: 100%;
+}
+
+.section{
+	background-color: red;
+	height: auto;
+    padding: 10px 10px 40px 10px;
+	margin-top: 40px;
+}
+
+.content{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.menuContent{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+#menu{
+	width: 100%;
+	min-height: 75px;
+	border-bottom: 1px solid black;
+}
+
+#menu ul{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+#menu li{
+	height: auto;
+	width: 100px;
+	padding: 12px;
+	margin-top: 7px;
+	list-style-type: none;
+	display: flex;
+	flex-grow: 1;
+}
+
+#menu a{
+	margin: 0 auto;
+	margin-top: 5px;
+	padding: 5px 10px 5px 10px;
+	border-bottom: 1px solid #99bbff;
+	text-decoration: none;
+	color: black;
+	display: block;
+}
+
+#menu a:hover{
+	border-color: #0066ff;
+	transition: 0.4s;
+}

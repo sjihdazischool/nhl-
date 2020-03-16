@@ -1,0 +1,43 @@
+#container{
+	width: 500px;
+}
+.museum_bridge{
+	width: 33%;
+	height: 120px;
+	float: left;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.imageWrapper{
+	height: 100px;
+}
+.museum_bridgelink{
+	height: 30px;
+	width: auto;	
+}
+
+h1{
+	color: red;
+	font-family: Verdana;
+}
+
+h2{
+	color: grey;
+	font-family: Verdana;
+}
+
+img{
+	display: block;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th:nth-child(odd) {
+    background-color: yellow;
+}
+
+td:nth-child(even) {
+    background-color: lightgrey;
+}
