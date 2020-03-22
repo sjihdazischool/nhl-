@@ -1,0 +1,12 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="overheidsfinancien">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:int" name="periode"/>
+        <xs:element type="xs:float" name="overheidsinkomen"/>
+        <xs:element type="xs:float" name="ovheidsuitgaven"/>
+        <xs:element type="xs:float" name="overheidssaldo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
