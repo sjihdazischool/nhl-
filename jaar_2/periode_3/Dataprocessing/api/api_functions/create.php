@@ -4,8 +4,8 @@
 	header('Access-Control-Allow-Methods: POST');
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-	include_once '../../config/db.php';
-	include_once '../../models/post.php';
+	include_once '../config/db.php';
+	include_once '../models/post.php';
 
 	//een database wordt aangemaakt
 
@@ -17,9 +17,7 @@
 
 		$Post = new Post($db);
 		$Post->get_table($subject);
-
 		$Post->select_category();
-
 		$Post->create();
 	}
 	else

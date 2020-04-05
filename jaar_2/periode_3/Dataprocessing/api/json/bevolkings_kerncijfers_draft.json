@@ -1,0 +1,66 @@
+{
+    "$id": "https://example.com/arrays.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "bevolking kerncijfers per jaar",
+    "type": "object",
+    "properties": 
+    {
+        "bevolking_kerncijfers":
+        {
+            "type": "array",
+            "properties": 
+            {
+                "data_per_jaar": 
+                {
+                    "type": "object",
+                    "required": 
+                    [ 
+                        "Periode", 
+                        "Mannen", 
+                        "Vrouwen", 
+                        "TotaleBevolking", 
+                        "GroeneDruk", 
+                        "GrijzeDruk", 
+                        "Mannen_gem_leeftijd", 
+                        "Vrouwen_gem_leeftijd"
+                    ],
+                    "properties": 
+                    {
+                        "Periode":{
+                           "type": "integer",
+                           "description": "Jaar" 
+                        },
+                        "Mannen": {
+                            "type": "integer",
+                            "description": "Aantal mannen." 
+                        },
+                        "Vrouwen": {
+                            "type": "integer",
+                            "description": "Aantal vrouwen." 
+                        },
+                        "TotaleBevolking": {
+                            "type": "integer",
+                            "description": "Totale bevolking van Nederland." 
+                        },
+                        "GroeneDruk": {
+                            "type": "integer",
+                            "description": "Groene druk van Nederland." 
+                        },
+                        "GrijzeDruk": {
+                            "type": "integer",
+                            "description": "Grijze druk van Nederland." 
+                        },
+                        "Mannen_gem_leeftijd": {
+                            "type": "integer",
+                            "description": "Gemiddelde leeftijd van mannen Nederland." 
+                        },
+                        "Vrouwen_gem_leeftijd": {
+                            "type": "integer",
+                            "description": "Gemiddelde leeftijd van vrouwen in Nederland." 
+                        },
+                    }
+                }
+            }
+        }
+    }
+}

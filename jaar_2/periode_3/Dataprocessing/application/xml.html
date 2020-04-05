@@ -83,83 +83,84 @@
 	}
 
 
-	getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/overheidsfinancien", "/json", "GET", function(response) 
+	getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolking_kerncijfers", "/xml", "GET", function(response) 
 	{
-		chart.options.data[0].name = 'Overheidssaldo';
-		for (var j = 0; j < response.overheidsfinancien.data_per_jaar.length; j++) 
+		chart.options.data[0].name = 'Aantal Mannen';
+		$(response).find("bevolking_kerncijfers_record").each(function () 
 		{
-			dataPoints1.push({
-				x: response.overheidsfinancien.data_per_jaar[j]['Periode'],
-				y: response.overheidsfinancien.data_per_jaar[j]['Overheidssaldo']
-			});
+			var dataPoint = $(this);
+			var x = $(this).find("periode").text();
+			var y = $(this).find("mannen").text();
+			dataPoints1.push({x: parseFloat(x), y: parseFloat(y)});
+		});
 
-		}
 	});
-	getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolkingsontwikkeling", "/json", "GET", function(response) 
+	getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolkingsontwikkeling", "/xml", "GET", function(response) 
 	{
 		chart.options.data[1].name = 'Overledenen';
-		for (var j = 0; j < response.bevolkingsontwikkeling.data_per_jaar.length; j++) 
+		$(response).find("bevolkingsontwikkeling_record").each(function () 
 		{
-			dataPoints2.push({
-				x: response.bevolkingsontwikkeling.data_per_jaar[j]['Periode'],
-				y: response.bevolkingsontwikkeling.data_per_jaar[j]['Overledenen']
-			});
-		}
+			var dataPoint = $(this);
+			var x = $(this).find("periode").text();
+			var y = $(this).find("overledenen").text();
+			dataPoints2.push({x: parseFloat(x), y: parseFloat(y)});
+		});
+
 	});
-	getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolking_kerncijfers", "/json", "GET", function(response) 
+	getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/overheidsfinancien", "/xml", "GET", function(response) 
 	{
-		console.log(response.bevolking_kerncijfers.data_per_jaar[0]['GrijzeDruk']);
-		chart.options.data[2].name = 'Mannen';
-		for (var j = 0; j < response.bevolking_kerncijfers.data_per_jaar.length; j++) 
+		chart.options.data[2].name = 'Overheidssaldo';
+		$(response).find("overheidsfinancien_record").each(function () 
 		{
-			dataPoints3.push({
-				x: response.bevolking_kerncijfers.data_per_jaar[j]['Periode'],
-				y: response.bevolking_kerncijfers.data_per_jaar[j]['Mannen']
-			});
-		}
+			var dataPoint = $(this);
+			var x = $(this).find("periode").text();
+			var y = $(this).find("overheidssaldo").text();
+			dataPoints3.push({x: parseFloat(x), y: parseFloat(y)});
+		});
+
 	});
 	chart.render();
 
 	$('#getSelectedData').on('click', function() 
 	{
-		var selectedData1 = $('#selectedData1').val();
-		var selectedData2 = $('#selectedData2').val();
-		var selectedData3 = $('#selectedData3').val();
-		getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/overheidsfinancien", "/json", "GET", function(response) 
+		var selectedData1 = $('#selectedData1').val().toLowerCase();
+		var selectedData2 = $('#selectedData2').val().toLowerCase();
+		var selectedData3 = $('#selectedData3').val().toLowerCase();
+		getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/overheidsfinancien", "/xml", "GET", function(response) 
 		{
 			chart.options.data[0].name = selectedData3;
 			dataPoints1.length = 0;
-			for (var j = 0; j < response.overheidsfinancien.data_per_jaar.length; j++) 
+			$(response).find("overheidsfinancien_record").each(function () 
 			{
-				dataPoints1.push({
-					x: response.overheidsfinancien.data_per_jaar[j]['Periode'],
-					y: parseFloat(response.overheidsfinancien.data_per_jaar[j][selectedData3])
-				});
-			}
+				var dataPoint = $(this);
+				var x = $(this).find("periode").text();
+				var y = $(this).find(selectedData3).text();
+				dataPoints1.push({x: parseFloat(x), y: parseFloat(y)});
+			});
 		});
-		getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolkingsontwikkeling", "/json", "GET", function(response) 
+		getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolkingsontwikkeling", "/xml", "GET", function(response) 
 		{
 			chart.options.data[1].name = selectedData2;
 			dataPoints2.length = 0;
-			for (var j = 0; j < response.bevolkingsontwikkeling.data_per_jaar.length; j++) 
+			$(response).find("bevolkingsontwikkeling_record").each(function () 
 			{
-				dataPoints2.push({
-					x: response.bevolkingsontwikkeling.data_per_jaar[j]['Periode'],
-					y: parseFloat(response.bevolkingsontwikkeling.data_per_jaar[j][selectedData2])
-				});
-			}
+				var dataPoint = $(this);
+				var x = $(this).find("periode").text();
+				var y = $(this).find(selectedData2).text();
+				dataPoints2.push({x: parseFloat(x), y: parseFloat(y)});
+			});
 		});
-		getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolking_kerncijfers", "/json", "GET", function(response) 
+		getTableData("http://localhost/NHL_stenden/nhl-/jaar_2/periode_3/Dataprocessing/api", "/bevolking_kerncijfers", "/xml", "GET", function(response) 
 		{
 			chart.options.data[2].name = selectedData1;
 			dataPoints3.length = 0;
-			for (var j = 0; j < response.bevolking_kerncijfers.data_per_jaar.length; j++) 
+			$(response).find("bevolking_kerncijfers_record").each(function () 
 			{
-				dataPoints3.push({
-					x: response.bevolking_kerncijfers.data_per_jaar[j]['Periode'],
-					y: parseFloat(response.bevolking_kerncijfers.data_per_jaar[j][selectedData1])
-				});
-			}
+				var dataPoint = $(this);
+				var x = $(this).find("periode").text();
+				var y = $(this).find(selectedData1).text();
+				dataPoints3.push({x: parseFloat(x), y: parseFloat(y)});
+			});
 		});
 		chart.render();
 	});
@@ -180,10 +181,14 @@
 	<body>
 		<main>
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-				<a class="navbar-brand" href="#">SjihdaziAPI</a>
+				<a class="navbar-brand" href="#">SjihdaziAPI Webb App</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="xml.html">xml <span class="sr-only">(current)</span></a>
+				</li>
 			</nav>
 			<div class="container">
 				<div id="chartContainer" style="height: 500px; max-width: 1120px; margin: 0px auto;" class="mb-3"></div>

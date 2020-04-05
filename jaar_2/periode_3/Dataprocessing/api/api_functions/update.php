@@ -4,8 +4,8 @@
 	header('Access-Control-Allow-Methods: POST');
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-	include_once '../../config/db.php';
-	include_once '../../models/post.php';
+	include_once '../config/db.php';
+	include_once '../models/put.php';
 
 	if ($_SERVER['REQUEST_METHOD'] == 'PUT') 
 	{
@@ -13,10 +13,10 @@
 		$database = new DB();
 		$db = $database->Connect();
 
-		$Post = new Post($db);
-		$Post->get_table($_GET['subject']);
-		$Post->select_category();
-		$Post->create();
+		$Put = new Put($db);
+		$Put->get_table($subject);
+		$Put->select_category();
+		$Put->update();
 	}
 	else
 	{

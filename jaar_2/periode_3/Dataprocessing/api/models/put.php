@@ -1,5 +1,5 @@
 <?php
-	Class Post
+	Class Put
 	{
 		private $table;
 
@@ -20,7 +20,7 @@
 			return $post_data;
 		}
 
-		public function select_category($set_param)
+		public function select_category()
 		{
 			if ($this->table == 'bevolkingsontwikkeling') 
 			{
@@ -32,21 +32,17 @@
 				$TotaleBevolkingsgroei = $this->get_post_data()->bevolkingsontwikkeling->data_per_jaar[0]->TotaleBevolkingsgroei; 
 				$BevolkingAanHetEindVanDePeriode = $this->get_post_data()->bevolkingsontwikkeling->data_per_jaar[0]->BevolkingAanHetEindVanDePeriode;
 
-				// echo $table;
-				$sql = "UPDATE " .$this->table. "SET 
-				(
-					Periode,
-					BevolkingAanHetBeginVanDePeriode,
-					Overledenen,
-					Immigratie,
-					EmigratieInclusiefAdministratieveC,
-					TotaleBevolkingsgroei,
-					BevolkingAanHetEindVanDePeriode
-				) 
-				WHERE Periode = ".$set_param."
-				VALUES (?,?,?,?,?,?,?)";
+				$sql = "UPDATE " .$this->table. " SET 
+					`Periode`=?, 
+					`BevolkingAanHetBeginVanDePeriode`=?, 
+					`Overledenen`=?, 
+					`Immigratie`=?, 
+					`EmigratieInclusiefAdministratieveC`=?, 
+					`TotaleBevolkingsgroei`=?, 
+					`BevolkingAanHetEindVanDePeriode`=?
+				WHERE `Periode`=?";
 
-				$keys = "iiiiiii";
+				$keys = "iiiiiiii";
 
 				$Periode  = htmlspecialchars(strip_tags($Periode));
 	            $BevolkingAanHetBeginVanDePeriode  = htmlspecialchars(strip_tags($BevolkingAanHetBeginVanDePeriode));
@@ -55,7 +51,7 @@
 	            $EmigratieInclusiefAdministratieveC  = htmlspecialchars(strip_tags($EmigratieInclusiefAdministratieveC));
 	            $TotaleBevolkingsgroei  = htmlspecialchars(strip_tags($TotaleBevolkingsgroei));
 	            $BevolkingAanHetEindVanDePeriode  = htmlspecialchars(strip_tags($BevolkingAanHetEindVanDePeriode));
-	            $set_param  = htmlspecialchars(strip_tags($set_param));
+	            $set_param  = $Periode;
 
 				$stmt = $this->conn->prepare($sql);
 				$stmt->bind_param(
@@ -83,20 +79,18 @@
 				$Vrouwen_gem_leeftijd = $this->get_post_data()->bevolking_kerncijfers->data_per_jaar[0]->Vrouwen_gem_leeftijd;
 
 				// echo $table;
-				$sql = "INSERT INTO " .$this->table. " 
-				(
-					Periode,
-					Mannen,
-					Vrouwen,
-					TotaleBevolking,
-					GroeneDruk,
-					GrijzeDruk,
-					Mannen_gem_leeftijd,
-					Vrouwen_gem_leeftijd
-				) 
-				VALUES (?,?,?,?,?,?,?,?)";
+				$sql = "UPDATE " .$this->table. " SET 
+					`Periode`=?,
+					`Mannen`=?,
+					`Vrouwen`=?,
+					`TotaleBevolking`=?,
+					`GroeneDruk`=?,
+					`GrijzeDruk`=?,
+					`Mannen_gem_leeftijd`=?,
+					`Vrouwen_gem_leeftijd`=?
+				WHERE `Periode`=?";
 
-				$keys = "iiiidddd";
+				$keys = "iiiiddddi";
 
 				$Periode  = htmlspecialchars(strip_tags($Periode));
 	            $Mannen  = htmlspecialchars(strip_tags($Mannen));
@@ -106,6 +100,7 @@
 	            $GrijzeDruk  = htmlspecialchars(strip_tags($GrijzeDruk));
 	            $Mannen_gem_leeftijd  = htmlspecialchars(strip_tags($Mannen_gem_leeftijd));
 	            $Vrouwen_gem_leeftijd  = htmlspecialchars(strip_tags($Vrouwen_gem_leeftijd));
+	            $set_param  = $Periode;
 
 				$stmt = $this->conn->prepare($sql);
 				$stmt->bind_param(
@@ -117,7 +112,8 @@
 					$GroeneDruk,
 					$GrijzeDruk,
 					$Mannen_gem_leeftijd,
-					$Vrouwen_gem_leeftijd
+					$Vrouwen_gem_leeftijd,
+					$set_param
 				);
 			}
 
@@ -132,19 +128,17 @@
 				$Overheidsconsumptie = $this->get_post_data()->overheidsfinancien->data_per_jaar[0]->Overheidsconsumptie;
 
 				// echo $table;
-				$sql = "INSERT INTO " .$this->table. " 
-				(
-					Periode,
-					Overheidsinkomsten,
-					Overheidsuitgaven,
-					Overheidssaldo,
-					OverheidsschuldEMU,
-					CollectieveLasten,
-					Overheidsconsumptie
-				) 
-				VALUES (?,?,?,?,?,?,?)";
-
-				$keys = "iiiiiii";
+				$sql = "UPDATE " .$this->table. " SET
+					`Periode`=?,
+					`Overheidsinkomsten`=?,
+					`Overheidsuitgaven`=?,
+					`Overheidssaldo`=?,
+					`OverheidsschuldEMU`=?,
+					`CollectieveLasten`=?,
+					`Overheidsconsumptie`=?
+				WHERE `Periode`=?";
+				
+				$keys = "iiiiiiii";
 
 				$Periode  = htmlspecialchars(strip_tags($Periode));
 	            $Overheidsinkomsten  = htmlspecialchars(strip_tags($Overheidsinkomsten));
@@ -152,6 +146,7 @@
 	            $OverheidsschuldEMU  = htmlspecialchars(strip_tags($OverheidsschuldEMU));
 	            $CollectieveLasten  = htmlspecialchars(strip_tags($CollectieveLasten));
 	            $Overheidsconsumptie  = htmlspecialchars(strip_tags($Overheidsconsumptie));
+	            $set_param  = $Periode;
 
 				$stmt = $this->conn->prepare($sql);
 				$stmt->bind_param(
@@ -162,7 +157,8 @@
 					$Overheidssaldo,
 					$OverheidsschuldEMU,
 					$CollectieveLasten,
-					$Overheidsconsumptie
+					$Overheidsconsumptie,
+					$set_param
 				);
 			}
 
