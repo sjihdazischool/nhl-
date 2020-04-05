@@ -1,0 +1,28 @@
+{
+	"bevolkings_kerncijfers": 
+	{
+		"data_per_jaar": 
+		[
+			{
+				"Periode": 2020,
+				"Mannen": 8621086,
+				"Vrouwen": 8801077,
+				"TotaleBevolking": 17422163,
+				"GroeneDruk": 37.0,
+				"GrijzeDruk": 33.3,
+				"Mannen_gem_leeftijd": 41.4,
+				"Vrouwen_gem_leeftijd": 43.0
+			},
+			{
+				"Periode": 2021,
+				"Mannen": 8661086,
+				"Vrouwen": 8881077,
+				"TotaleBevolking": 17542163,
+				"GroeneDruk": 36.7,
+				"GrijzeDruk": 33.9,
+				"Mannen_gem_leeftijd": 41.6,
+				"Vrouwen_gem_leeftijd": 42.6
+			}
+		]	
+	}
+}

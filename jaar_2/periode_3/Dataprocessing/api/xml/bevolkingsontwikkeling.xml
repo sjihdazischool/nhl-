@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bevolkingsontwikkeling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="overheidsfinancien.xsd">
+  <bevolkingsontwikkeling_record identifier="periode">
+    <periode format="jaar">1995</periode>
+    <BevolkingAanHetBeginVanDePeriode eenheid="aantal_mensen">15424122</BevolkingAanHetBeginVanDePeriode>
+    <Overledenen eenheid="aantal_mensen">135675</Overledenen>
+    <Immigratie eenheid="aantal_mensen">96099</Immigratie>
+    <EmigratieInclusiefAdministratieveC eenheid="aantal_mensen">82195</EmigratieInclusiefAdministratieveC>
+    <TotaleBevolkingsgroei eenheid="aantal_mensen">69767</TotaleBevolkingsgroei>
+    <BevolkingAanHetEindVanDePeriode eenheid="aantal_mensen">15493889</BevolkingAanHetEindVanDePeriode>
+  </bevolkingsontwikkeling_record>
+</bevolkingsontwikkeling>

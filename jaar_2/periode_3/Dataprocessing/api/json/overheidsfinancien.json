@@ -1,0 +1,28 @@
+{
+	"overheidsfinancien": 
+	{
+		"data_per_jaar": 
+		[
+			{
+				"Periode": 2020,
+				"Overheidsinkomsten": 364279,
+				"Overheidsuitgaven": 350242,
+				"Overheidssaldo": 350242,
+				"OverheidsschuldEMU": 17037,
+				"EmigratieInclusiefAdministratieveC": 404630,
+				"CollectieveLasten": 344827,
+				"Overheidsconsumptie": 228375
+			},
+			{
+				"Periode": 2021,
+				"Overheidsinkomsten": 38214,
+				"Overheidsuitgaven": 390242,
+				"Overheidssaldo": 350242,
+				"OverheidsschuldEMU": 21037,
+				"EmigratieInclusiefAdministratieveC": 424630,
+				"CollectieveLasten": 334827,
+				"Overheidsconsumptie": 268375
+			}
+		]	
+	}
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bevolking_kerncijfers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="overheidsfinancien.xsd">
+  <bevolking_kerncijfers_record identifier="periode">
+    <periode format="jaar">1950</periode>
+    <mannen>4998251</mannen>
+    <vrouwen>5028522</vrouwen>
+    <totaleBevolking> 10026773</totaleBevolking>
+    <groeneDruk>67.9</groeneDruk>
+    <grijzeDruk>14.0</grijzeDruk>
+    <mannen_gem_leeftijd>30.3</mannen_gem_leeftijd>
+    <vrouwen_gem_leeftijd>31.3</vrouwen_gem_leeftijd>
+  </bevolking_kerncijfers_record>
+</bevolking_kerncijfers>

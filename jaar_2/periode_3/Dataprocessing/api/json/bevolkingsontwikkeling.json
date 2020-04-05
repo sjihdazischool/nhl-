@@ -1,0 +1,17 @@
+{
+	"bevolkingsontwikkeling": 
+	{
+		"data_per_jaar": 
+		[
+			{
+				"Periode": 2020,
+				"BevolkingAanHetBeginVanDePeriode": 15424122,
+				"Overledenen": 135675,
+				"Immigratie": 96099,
+				"EmigratieInclusiefAdministratieveC": 82195,
+				"TotaleBevolkingsgroei": 69767,
+				"BevolkingAanHetEindVanDePeriode": 15493889
+			}
+		]	
+	}
+}

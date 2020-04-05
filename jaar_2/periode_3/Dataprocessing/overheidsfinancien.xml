@@ -1,12 +1,12 @@
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="overheidsfinancien">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element type="xs:int" name="periode"/>
-        <xs:element type="xs:float" name="overheidsinkomen"/>
-        <xs:element type="xs:float" name="ovheidsuitgaven"/>
-        <xs:element type="xs:float" name="overheidssaldo"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<overheidsfinancien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="overheidsfinancien.xsd">
+  <overheidsfinancien_record identifier="periode">
+    <periode format="jaar">2000</periode>
+    <overheidsInkomen eenheid="miljoen"> 12345</overheidsInkomen>
+    <ovheidsUitgaven eenheid="miljoen">12345</ovheidsUitgaven>
+    <overheidsSaldo eenheid="miljoen"> 21334</overheidsSaldo>
+    <ovheidsSchuldEMU eenheid="miljoen"> 1234</ovheidsSchuldEMU>
+    <collectieveLasten eenheid="miljoen">12345</collectieveLasten>
+    <overheidsConsumptie eenheid="miljoen">12345</overheidsConsumptie>
+  </overheidsfinancien_record>
+</overheidsfinancien>
